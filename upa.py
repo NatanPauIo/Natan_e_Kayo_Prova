@@ -1,6 +1,6 @@
 from __future__ import annotations
 from datetime import date
-import dis
+
 class QuantidadeInvalidaError(Exception):
     """Exceção para quantidade inválida."""
 class MedicamentoVencidoError(Exception):
