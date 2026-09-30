@@ -22,6 +22,25 @@ class Medicamento:
             raise ValueError("A quantidade não pode ser um número negativo.")
         self._quantidade = disponivel
 
+    @valor.setter
+    def valor(self, quantia: float) -> None:
+        if quantia <= 0:
+            raise ValueError("O valor do medicamento deve ser positivo.")
+        self._valor = quantia
+
+  #  @classmethod
+   # def de_registro(cls, linha: str) -> "Medicamento":
+    #    nome, lote, validade, quantidade ,valor_str = linha.split(";")
+     #   return cls(int(nome.strip()), lote.strip(), validade.strip(), int(quantidade), float(valor_str.strip()))
+
+    @staticmethod
+    def dias_para_vencer(data_validade: date) -> int:
+        return data_validade - date.today()
+
+    def __str__(self) -> str:
+        return f"Medicamento: {self.nome}; Lote: {self.lote}; Quantidade: {self.quantidade}; Validade: {self.validade}"
+
+
     @classmethod
     def de_registro(cls, texto: str) -> Medicamento:
         nome, lote, validade, quantidade, valor = texto.split(";")
