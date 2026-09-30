@@ -1,0 +1,24 @@
+Mediicamento
+ -nome ; str
+ -lote : str
+ -validade : date
+ @property
+ -quantidade ; int > 0
+ @property
+ -valor ; float > 0
+
+ @classmethod
+ de_registro()
+
+ @staticmethod 
+ dias_para_vencer(date)
+
+ __str__
+ __repr__
+ __eq__
+ __lt__ nome == nome e lote == lote
+
+ __lt__(), comparando dois objetos pela data de validade, de forma que
+uma lista de objetos Medicamento possa ser ordenada com sorted() da validade mais
+próxima para a mais distante.
+
